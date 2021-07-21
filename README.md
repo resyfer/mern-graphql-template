@@ -6,7 +6,7 @@ DATE : July 21, 2021
 
 ## Creating directories:
 
-There's a [shortcut](#shortcut) below, this long way is for peeps who want to know what all is being done
+There's a [shortcut](#shortcut) below for creating directories, this long way is for peeps who want to know what all is being done
 
 1) Either make a new github repository and clone it or create a local directory where your app will be, eg. `my-app`
 
@@ -26,6 +26,8 @@ my-app/
 cd client && npx create-react-app .
 ```
 This cds into the client folder and initiates the create-react-app in the current (client) directory.
+
+Remember to remove the `.git` directory
 
 6) Inside the `src` directory, remove the vitals and testing from the directory and from the `App.js` and `index.js` files, and the unnecessary css in `App.css` and `index.css` (change their extensions to `.scss` if you want as well). Remove the `README.md` and `.gitignore` in the client directory.
 
@@ -90,7 +92,6 @@ my-app/
 |     |     ├── App.scss
 |     |     ├── index.js
 |     |     └── index.scss
-|     ├── package-lock.json
 |     └── package.json
 ├── server/
 |     ├── config/
@@ -101,7 +102,6 @@ my-app/
 |     ├── node_modules/
 |     ├── routes/
 |     ├── server.js
-|     ├── package-lock.json
 |     └── package.json
 ├── .gitignore
 ├── README.md
@@ -109,4 +109,21 @@ my-app/
 ```
 
 ## Shortcut
-hello
+
+Follow everything from below here. Make sure you're cd-ed into the app folder
+```
+touch .gitignore
+mkdir client server
+cd client && npx create-react-app .
+rm -rf .git
+rm -f .gitignore README.md
+cd src && rm -f reportWebVitals.js setupTests.js logo.svg App.test.js && mkdir components pages
+cd components && mkdir css && touch Navbar.jsx && cd css && touch Navbar.scss
+cd ../..
+cd pages && mkdir css && touch Home.jsx && cd css && touch Home.scss
+cd ../../..
+cd public && rm -f favicon.ico logo192.png logo512.png manifest.json && mkdir img
+cd ../..
+cd server && mkdir config controllers models routes
+touch server.js && npm init -y
+```
