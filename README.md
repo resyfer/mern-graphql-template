@@ -115,6 +115,8 @@ Follow everything from below here. Make sure you're cd-ed into the app folder
 touch .gitignore
 mkdir client server
 cd client && npx create-react-app .
+npm i react-router-dom sass
+npm i -D concurrently nodemon standard
 rm -rf .git
 rm -f .gitignore README.md
 cd src && rm -f reportWebVitals.js setupTests.js logo.svg App.test.js && mkdir components pages
@@ -125,5 +127,8 @@ cd ../../..
 cd public && rm -f favicon.ico logo192.png logo512.png manifest.json && mkdir img
 cd ../..
 cd server && mkdir config controllers models routes
+npm i cors dotenv express mongoose
+npm i -D nodemon standard
 touch server.js && npm init -y
+cd ..
 ```
