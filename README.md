@@ -116,7 +116,7 @@ touch .gitignore
 mkdir client server
 cd client && npx create-react-app .
 npm i react-router-dom sass
-npm i -D concurrently nodemon standard
+npm i -D nodemon standard
 rm -rf .git
 rm -f .gitignore README.md
 cd src && rm -f reportWebVitals.js setupTests.js logo.svg App.test.js && mkdir components pages
@@ -130,6 +130,6 @@ cd server && mkdir config controllers models routes
 cd config && touch .env .env.example && cd ..
 touch server.js && npm init -y
 npm i cors dotenv express mongoose
-npm i -D nodemon standard
+npm i -D standard
 cd ..
 ```
