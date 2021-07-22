@@ -127,6 +127,7 @@ cd ../../..
 cd public && rm -f favicon.ico logo192.png logo512.png manifest.json && mkdir img
 cd ../..
 cd server && mkdir config controllers models routes
+cd config && touch .env .env.example && cd ..
 touch server.js && npm init -y
 npm i cors dotenv express mongoose
 npm i -D nodemon standard
