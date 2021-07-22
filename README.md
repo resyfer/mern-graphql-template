@@ -133,3 +133,50 @@ npm i cors dotenv express mongoose
 npm i -D standard
 cd ..
 ```
+
+## File changes:
+
+- `server/config/.env`
+
+```
+NODE_ENV = development
+MONGO_URI = <URL>
+```
+
+- `server/server.js`
+
+```
+require('dotenv').config({ path: './config/.env' });
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+
+//Import Routes
+
+
+//Middle Ware
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
+// Global Values
+const port = process.env.PORT || 5000;
+const url = (process.env.NODE_ENV === 'development') ? 'http://localhost:3000' : 'WEBSITE_URL'; // Every URL will be : url + '/path'
+
+//Routes
+
+
+// API Error
+app.get('/api/*', (req, res) => res.send('API Not Available'));
+
+// Client Redirect
+app.get('/', (req, res) => res.redirect(url));
+
+//DB Connect & App Listen
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(app.listen(port, () => console.log(`Server is listening on port ${port}`)))
+  .catch(err => console.log(err));
+```
+
+- Whitelist IP in MongoDB
