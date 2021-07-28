@@ -51,6 +51,8 @@ my-app/
 |     |     |     └── css/
 |     |     |     |     └── Home.scss
 |     |     |     └── Home.jsx
+|     |     ├── context/
+|     |     ├── hooks/
 |     |     ├── App.js
 |     |     ├── App.scss
 |     |     ├── index.js
@@ -88,6 +90,8 @@ my-app/
 |     |     |     └── css/
 |     |     |     |     └── Home.scss
 |     |     |     └── Home.jsx
+|     |     ├── context/
+|     |     ├── hooks/
 |     |     ├── App.js
 |     |     ├── App.scss
 |     |     ├── index.js
@@ -119,7 +123,7 @@ npm i react-router-dom sass
 npm i -D nodemon standard
 rm -rf .git
 rm -f .gitignore README.md
-cd src && rm -f reportWebVitals.js setupTests.js logo.svg App.test.js && mkdir components pages
+cd src && rm -f reportWebVitals.js setupTests.js logo.svg App.test.js && mkdir components pages context hooks
 cd components && mkdir css && touch Navbar.jsx && cd css && touch Navbar.scss
 cd ../..
 cd pages && mkdir css && touch Home.jsx && cd css && touch Home.scss
