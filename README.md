@@ -29,7 +29,7 @@ cd config && touch .env
 cp .env.example .env
 ```
 
-NOTE: Last command will work only in Bash (not CMD). If CND, then manually copy-paste `.env.example` and renane the copy as `.env`
+NOTE: Last command will work only in Bash (not CMD). If CMD, then manually copy-paste `.env.example` and renane the copy as `.env`
 
 ## File Structure
 
